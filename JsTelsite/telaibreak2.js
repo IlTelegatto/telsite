@@ -23,7 +23,7 @@ const prompts = [
    ["cosa", "perché", "come", "dove", "quando"],
    ["no","non sono sicuro","forse","no grazie"],
    [""],
-   ["haha","ha","lol","hehe","divertente","scherzo"]
+   ["haha","ha","lol","hehe","divertente","scherzo"],
    ["/sn"]
 ]
 
@@ -55,7 +55,7 @@ const replies = [
    ["Ottima domanda"],
    ["Va bene","Capisco","Di cosa vuoi parlare?"],
    ["Per favore dì qualcosa :("],
-   ["Haha!", "Bravo!"]
+   ["Haha!", "Bravo!"],
    ["si", "no"]
 ]
 
