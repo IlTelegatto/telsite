@@ -36,6 +36,39 @@ body {
 }
 </style>
   
+  
+  
+  
+  
+ 
+  
+  
+  
+     <title></title>
+    <script>
+    function checkAnswers(){
+        // The following is what I changed.
+        Student_answer = document.querySelector('[name="clave1"]').value
+        Teacher_answer = "abc"
+
+        if (Student_answer.length === 0 || Teacher_answer.length === 0) {
+            alert("You must enter an answer to continue...");
+            return false;
+        }
+
+        if (Student_answer === Teacher_answer) {
+            alert("CONGRATULATIONS! Your answer is correct! You have advanced to the next level.");
+            document.body.innerHTML += '<button onclick="window.location.href = \'https://www.google.com\';">Next Riddle</button>'
+            //NOTE: here is where the button should be activated and click on it to advance to an hyperlink 
+        } else {
+            alert("Wrong answer, please, keep trying...");
+            //NOTE: here the button must be disabled
+        }
+
+    }
+    </script>
+  
+  
 </head>
     
 <body>
@@ -69,6 +102,17 @@ body {
         Pages/window.location.href = url + ".html"
     }
   </script>
+    
+    <h3>Write here your answer...</h3>
+    <br>
+
+    <form action="" name="f1" onsubmit >
+      Your answer: <input type="password" name="clave1" size="20">
+      <br>
+      <br>
+      <input type="button" value="Check" onClick="checkAnswers()">
+
+    </form>    
     
 </body>
   
