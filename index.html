@@ -48,7 +48,7 @@ body {
     <script>
     function checkAnswers(){
         // The following is what I changed.
-        Student_answer = document.querySelector('[name="youlookme"]').value
+        Student_answer = document.querySelector('[name="TelCode"]').value
         Teacher_answer = "abc"
 
         if (Student_answer.length === 0 || Teacher_answer.length === 0) {
@@ -107,7 +107,7 @@ body {
     <br>
 
     <form action="" name="f1" onsubmit >
-      Your answer: <input type="password" name="clave1" size="20">
+      Your answer: <input type="password" name="TelCode" size="20">
       <br>
       <br>
       <input type="button" value="Check" onClick="checkAnswers()">
