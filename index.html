@@ -96,12 +96,22 @@ body {
     <br>
 
     <form action="" name="f1" onsubmit >
-      Your answer: <input name="TelCode" size="20">
+      Your answer: <input id="myInput" name="TelCode" size="20">
       <br>
       <br>
-      <input type="button" value="Riscatta" onClick="checkAnswers()">
+      <input id="myBtn" type="button" value="Riscatta" onClick="checkAnswers()">
 
     </form>    
+
+     <script>
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("myBtn").click();
+      }
+    });
+    </script>
     
 </body>
   
