@@ -47,16 +47,15 @@ body {
      <title></title>
     <script>
     function checkAnswers(){
-        // The following is what I changed.
         Student_answer = document.querySelector('[name="TelCode"]').value
-        Teacher_answer = "abc"
+        Telcode1 = "telai"
 
-        if (Student_answer.length === 0 || Teacher_answer.length === 0) {
+        if (Student_answer.length === 0 || Telcode1.length === 0) {
             alert("You must enter an answer to continue...");
             return false;
         }
 
-        if (Student_answer === Teacher_answer) {
+        if (Student_answer === Telcode1) {
             alert("CONGRATULATIONS! Your answer is correct! You have advanced to the next level.");
             window.location.href = 'Pages/telai.html';
         } else {
