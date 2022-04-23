@@ -102,16 +102,16 @@ body {
       <input id="myBtn" type="button" value="Riscatta" onClick="checkAnswers()">
 
     </form>    
-
-     <script>
-    var input = document.getElementById("myInput");
-    input.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-       event.preventDefault();
-       document.getElementById("myBtn").click();
-      }
+    
+  <script>
+    document.getElementById("myInput")
+        .addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("myBtn").click();
+        }
     });
-    </script>
+   </script>
     
 </body>
   
