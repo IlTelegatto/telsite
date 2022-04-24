@@ -49,6 +49,7 @@ body {
     function checkAnswers(){
         Student_answer = document.querySelector('[name="TelCode"]').value
         Telcode1 = "telai"
+        Telcode2 = "telskate"
 
         if (Student_answer.length === 0 || Telcode1.length === 0) {
             alert("You must enter an answer to continue...");
@@ -62,6 +63,17 @@ body {
             alert("Wrong TelCode");
         }
 
+        if (Student_answer.length === 0 || Telcode2.length === 0) {
+            alert("You must enter an answer to continue...");
+            return false;
+        }
+
+        if (Student_answer === Telcode2) {
+            alert("CONGRATULATIONS! Your answer is correct! You have advanced to the next level.");
+            window.location.href = 'Pages/telai.html';
+        } else {
+            alert("Wrong TelCode");
+        }      
     }
     </script>
   
