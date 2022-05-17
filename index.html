@@ -50,6 +50,7 @@ body {
         Tel_answer = document.querySelector('[name="TelCode"]').value
         Telcode1 = "telai"
         Telcode2 = "telskate"
+        Telcode3 = "telworld"
 
         if (Tel_answer.length === 0 || Telcode1.length === 0) {
             alert("You must enter an answer to continue...");
@@ -62,6 +63,9 @@ body {
         if (Tel_answer === Telcode2) {
             window.location.href = 'Pages/telskate.html';
         }      
+        if (Tel_answer === Telcode3) {
+            window.location.href = 'Pages/telworld.html';
+        }  
     }
     </script>
   
