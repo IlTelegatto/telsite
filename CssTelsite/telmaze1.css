@@ -69,7 +69,7 @@ body {
   height: 90px;
   border: none;
   background-color: #000;
-  background-image: url(/img/play-btn.png);
+  background-image: url('../ResourcesTelSite/telmazebtn.png');
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;
