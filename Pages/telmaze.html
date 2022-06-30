@@ -1,163 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html manifest="offline.appcache">
 <head>
-  <meta charset="utf-8"/>
-  <title>Scary Maze game online - No overlay Ads</title>
-  <meta name="description"
-        content="Play the scary maze game online. Concentrate and try to reach the goal without touching the walls. Only four levels to beat. Free scary maze game."/>
-  <link rel="canonical" href="https://scary-maze.com"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="shortcut icon" href="img/scary-maze-favico.jpg" type="image/x-icon"/>
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin,latin-ext" rel="stylesheet"
-        type="text/css"/>
-  <link href="css/style.css" rel="stylesheet" type="text/css"/>
-  <link href="css/cookiesInfo.css" rel="stylesheet" type="text/css"/>
-  <meta property="og:image" content="/img/scary-maze-social.png"/>
-  <link href="//fonts.googleapis.com/css?family=Nosifer" rel="stylesheet"/>
-  <script type="text/javascript" src="//w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({
-      publisher: 'dd587538-3790-44df-b9c0-c34f89c806a7',
-      doNotHash: false,
-      doNotCopy: false,
-      hashAddressBar: false
-    });</script>
-  <script type="text/javascript"
-          src="//platform-api.sharethis.com/js/sharethis.js#property=58aca5ecd390d300118213ca&product=inline-share-buttons"></script>
-  <style type="text/css">
-      #gra-wrapper {
-          height: 90vh;
-          max-height: 80vw;
-          width: 90vw;
-          max-width: 133vh;
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto;
-      }
-  </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8730574375564897"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Scary Maze</title>
+    <link rel="manifest" href="appmanifest.json"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="apple-touch-icon" sizes="256x256" href="icon-256.png"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="shortcut icon" sizes="256x256" href="icon-256.png"/>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+
+        canvas {
+            touch-action-delay: none;
+            touch-action: none;
+            -ms-touch-action: none;
+        }
+    </style>
 </head>
-<body>
+<body id="gameMovie">
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-      return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = '//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.10';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<div id="Header"><a href="https://scary-maze.com" title="scary maze game"><img src="img/scary-maze-game.png"
-                                                                               alt="scary maze logo"></a>
-  <h1>scary maze</h1>
+<div id="c2canvasdiv">
+    <canvas id="c2canvas" width="550" height="400">
+        <h1>Your browser does not appear to support HTML5. Try upgrading your browser to the latest version. <a
+                href="//www.whatbrowser.org">What is a browser?</a>
+            <br/><br/><a href="//www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet
+                Explorer</a><br/>
+            <a href="//www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+            <a href="//www.google.com/chrome/">Google Chrome</a><br/>
+            <a href="//www.apple.com/safari/download/">Apple Safari</a></h1>
+    </canvas>
 </div>
-<div id="short-desc">
-  <h2>Welcome to SCARY MAZE game!</h2>
-  <p>Concentrate and try to reach the goal without touching the walls.</p>
-  <p>Don't forget to leave the comment and share with Your friends.</p>
-</div>
-<div class="ad">
-<!-- displayowa2 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8730574375564897"
-     data-ad-slot="4974182740"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<script src="jquery-2.1.1.min.js"></script>
+<script src="c2runtime.js"></script>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+    jQuery(document).ready(function () {
+        cr_createRuntime("c2canvas");
+    });
+
+    function onVisibilityChanged() {
+        if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+            cr_setSuspended(true);
+        else
+            cr_setSuspended(false);
+    };
+    document.addEventListener("visibilitychange", onVisibilityChanged, false);
+    document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+    document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+    document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+
+    function OnRegisterSWError(e) {
+        console.warn("Failed to register service worker: ", e);
+    };
+    window.C2_RegisterSW = function C2_RegisterSW() {
+        if (!navigator.serviceWorker)
+            return;
+        try {
+            navigator.serviceWorker.register("sw.js", {scope: "./"})
+                .then(function (reg) {
+                    console.log("Registered service worker on " + reg.scope);
+                })
+                .catch(OnRegisterSWError);
+        } catch (e) {
+            OnRegisterSWError(e);
+        }
+    };
 </script>
-</div>
-<div id="share">
-  <div class="sharethis-inline-share-buttons"></div>
-</div>
-
-<div id="description">
-  <p>The scary maze The game for people who love the thrill or&hellip; for peple who want some impressions for their friends. What are the
-    rules? You need to move the cursor by the strictly in the designated maze.</p>
-  <p>You need to show cunning and precision, otherwise you will quickly go beyond the boundaries and you will lose the round and you will
-    have to start all over again to be a winner. I assure you that it is worth being patient and the ending will surely surprise you.
-    Especially on the 3rd level. The most surprise is when the terrifying monster suddenly appears along with a very loud scream. Scary maze
-    is very popular all over the world so you must try too.</p>
-  <h4>Game Controls:</h4>
-  <p>&bull; LEFT CLICK to begin the game.</p>
-  <p>&bull; USE THE MOUSE to guide the dot through the mazes.</p>
-  <h4><br/>The Age:</h4>
-  <p>&bull; It&rsquo;s the only for poople after 16 years old</p>
-  <p>The source of scary maze is ,,screamer&rdquo;and it&rsquo;s a type of animation, movie or application specifically designed to scare
-    the viewer. The first screamers appeared around 2002. The first screamers appeared in horror movies that were designed to scare a
-    focused viewer. The Scary Maze Game is created by Jerremy Winterrowd and it&rsquo;s one of the most popular screamer.</p>
-</div>
-<div id="wrapper">
-
-  <div id="gra-wrapper">
-    <iframe src="html5/index.html" scrolling="no"
-            style="height:1px;min-height:100%;width:1px;min-width:100%;border:0" allowfullscreen></iframe>
-  </div>
-
-  <p style="text-align:center;">
-    <iframe width="1080" height="720" align="middle"
-            src="https://www.youtube.com/embed/ArZS5KPcTzc" allowFullScreen>
-    </iframe>
-  </p>
-  <div class="ad">
-<!-- display_poziom -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8730574375564897"
-     data-ad-slot="9959417125"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  </div>
-
-</div>
-
-
-<div id="komentarz" style="background-color:white;text-align:center;">
-  <div class="fb-page" data-href="https://www.facebook.com/Scary-Mazecom-157906118052153" data-small-header="false"
-       data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="600">
-    <blockquote cite="https://www.facebook.com/Scary-Mazecom-157906118052153" class="fb-xfbml-parse-ignore"><a
-        href="https://www.facebook.com/Scary-Mazecom-157906118052153">Scary-Maze.com</a></blockquote>
-  </div>
-  <div class="fb-comments" data-href="https://scary-maze.com" data-width="100%" data-colorscheme="light"
-       data-num-posts="10" data-order-by="social">
-  </div>
-</div>
-
-<div id="footer">2022 scary-maze.com | <a href="cookies-policy.html" rel="nofollow">Cookies Policy</a></div>
-
-<script>(function(d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-      return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = '//connect.facebook.net/en_EN/all.js#xfbml=1';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-<script>
-  (function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-      (i[r].q = i[r].q || []).push(arguments);
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
-  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-37733618-20', 'auto');
-  ga('send', 'pageview');
-</script>
-<script src="js/cookiesInfo.js"></script>
 </body>
-</html>
+</html> 
