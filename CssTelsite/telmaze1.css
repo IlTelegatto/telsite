@@ -35,7 +35,7 @@ body {
 #game-intro .logo-img {
   width: 500px;
   height: 170px;
-  background-image: url(/img/scarymaze-logo.png);
+  background-image: url('../ResourcesTelSite/TelMaze.png');
   background-size: 500px 170px;
   background-repeat: no-repeat;
   background-position: center;
