@@ -3,3 +3,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+#content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+#clock {
+	font-family: 'Montserrat', "Segoe UI", Segoe, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 70px;
+	position:absolute;
+	text-align: center;
+	line-height: 300px;
+	width: 300px;
+	color:white;
+	display:block;
+	z-index: 5;
+}
