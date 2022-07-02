@@ -5,9 +5,7 @@
 }
 
 #content {
-	position: absolute;
-	left: 50%;
-	top: 50%;
+	position: center;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
@@ -17,10 +15,8 @@
 	position:absolute;
 	text-align: center;
 	line-height: 300px;
+	width: 300px;
 	color:black;
 	display:block;
 	z-index: 5;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
