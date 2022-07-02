@@ -8,8 +8,8 @@
 	position: absolute;
 	left: 41%;
 	top: 30%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -40%);
+	transform: translate(-50%, -40%);
 }
 #clock {
 	font-family: 'Montserrat', "Segoe UI", Segoe, 'Helvetica Neue', Helvetica, Arial, sans-serif;
