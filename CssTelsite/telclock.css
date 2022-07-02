@@ -12,7 +12,7 @@
 #clock {
 	font-family: 'Montserrat', "Segoe UI", Segoe, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 70px;
-	position:absolute;
+	position:center;
 	text-align: center;
 	line-height: 300px;
 	width: 300px;
