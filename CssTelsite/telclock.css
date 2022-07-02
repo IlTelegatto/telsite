@@ -6,8 +6,8 @@
 
 #content {
 	position: absolute;
-	left: 40%;
-	top: 30%;
+	left: center;
+	top: center;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
