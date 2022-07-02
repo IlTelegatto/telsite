@@ -51,7 +51,8 @@ body {
         Telcode1 = "telai"
         Telcode2 = "telskate"
         Telcode3 = "telworld"
-
+        Telcode4 = "telclock"    
+      
         if (Tel_answer.length === 0 || Telcode1.length === 0) {
             alert("You must enter an answer to continue...");
             return false;
@@ -66,6 +67,9 @@ body {
         if (Tel_answer === Telcode3) {
             window.location.href = 'Pages/telworld.html';
         }  
+        if (Tel_answer === Telcode4) {
+            window.location.href = 'Pages/telclock.html';
+        }       
     }
     </script>
   
