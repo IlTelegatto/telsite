@@ -1,3 +1,8 @@
+html {
+    background: url('../ResourcesTelSite/telclocksunandmoon.png') no-repeat center fixed;     
+    background-size: cover;
+}
+
 .center {
   display: block;
   margin-left: auto;
