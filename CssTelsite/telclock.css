@@ -5,11 +5,12 @@
 }
 
 #content {
-         position: absolute;
-         right: 0px;
-	 width: 300px;
-	 border: 3px solid #73AD21;
-	 padding: 10px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
 }
 #clock {
 	font-family: 'Montserrat', "Segoe UI", Segoe, 'Helvetica Neue', Helvetica, Arial, sans-serif;
