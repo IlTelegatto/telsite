@@ -1,8 +1,6 @@
 html {
     background: url('../ResourcesTelSite/telsitebackground.png') no-repeat center fixed;     
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-size: cover;
 } 
 
 .marquee1
