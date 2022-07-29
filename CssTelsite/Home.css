@@ -3,15 +3,7 @@ html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-}
-
-.parent
-{
-    position: fixed:
-    width: 100%;
-    background: grey;
-
-}
+} 
 
 .marquee1
 {
