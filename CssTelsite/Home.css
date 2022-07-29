@@ -1,6 +1,8 @@
 html {
     background: url('../ResourcesTelSite/telsitebackground.png') no-repeat center fixed;     
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .parent
