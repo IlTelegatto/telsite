@@ -1,5 +1,6 @@
 html {
-    background-image: url('../ResourcesTelSite/telparisbackground.png');
+    background-image:url('../ResourcesTelSite/telparisbackground.png');
     background-repeat:no-repeat;
-    background-position: center center;
+    background-attachment:fixed;
+    background-position:center;
 } 
